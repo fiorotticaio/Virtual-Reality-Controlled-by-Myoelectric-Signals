@@ -9,6 +9,7 @@ TagManager:
   - Button
   - Toggle
   - ColorBlock
+  - ObjectToHold
   layers:
   - Default
   - TransparentFX
