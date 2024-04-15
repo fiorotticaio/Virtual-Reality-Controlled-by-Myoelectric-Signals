@@ -21,16 +21,16 @@ public class HoldObject : MonoBehaviour
         }
     }
 
-    // void OnCollisionExit(Collision collision)
-    // {
-    //     // Verifica se a colisão envolve o objeto que estava sendo segurado
-    //     if (collision.transform == objectToHold)
-    //     {
-    //         // Limpa o objeto que estava sendo segurado
-    //         objectToHold = null;
-    //         isHoldingObject = false;
-    //     }
-    // }
+    void OnCollisionExit(Collision collision)
+    {
+        // Verifica se a colisão envolve o objeto que estava sendo segurado
+        if (collision.transform == objectToHold)
+        {
+            // Limpa o objeto que estava sendo segurado
+            objectToHold = null;
+            isHoldingObject = false;
+        }
+    }
 
     void Update()
     {
@@ -41,5 +41,7 @@ public class HoldObject : MonoBehaviour
             objectToHold.position = transform.position;
             objectToHold.rotation = transform.rotation;
         }
+        // objectToHold.position = transform.position;
+        // objectToHold.rotation = transform.rotation;
     }
 }
