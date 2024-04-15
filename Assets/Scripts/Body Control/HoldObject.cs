@@ -1,56 +1,31 @@
-// TODO: Passar o código para ingles
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoldObject : MonoBehaviour
-{
-    private bool isHoldingObject = false;
-    private Transform objectToHold; // Objeto que será segurado pela mão
+public class HoldObject : MonoBehaviour {
 
-    // void OnCollisionEnter(Collision collision)
-    // {
-    //     // Verifica se a colisão envolve o objeto que deve ser segurado
-    //     if (collision.transform.CompareTag("ObjectToHold"))
-    //     {
-    //         Debug.Log("Entrou");
-    //         // Define o objeto a ser segurado como o objeto envolvido na colisão
-    //         objectToHold = collision.transform;
-    //         isHoldingObject = true;
-    //     }
-    // }
+    public AudioClip holdAudio;
 
-    // void OnCollisionExit(Collision collision)
-    // {
-    //     // Verifica se a colisão envolve o objeto que estava sendo segurado
-    //     if (collision.transform == objectToHold)
-    //     {
-    //         // Limpa o objeto que estava sendo segurado
-    //         objectToHold = null;
-    //         isHoldingObject = false;
-    //     }
-    // }
-
-    void OnTriggerStay(Collider other)
-    {
-        // Verifica se a colisão envolve o objeto que deve ser segurado
+    // Execute just when the contact happens 
+    void OnTriggerEnter(Collider other) {
         if (other.transform.CompareTag("ObjectToHold")) {
+            AudioSource.PlayClipAtPoint(holdAudio, transform.position); // Play the audio 
+        }
+    }
+
+    // Execute while the contact is happening
+    void OnTriggerStay(Collider other) {
+        /* Checks whether the collision involves the object that must be held */
+        if (other.transform.CompareTag("ObjectToHold")) {
+            /* Holding the object */
             other.transform.position = transform.position;
             other.transform.rotation = transform.rotation;
         }
     }
 
-    void Update()
-    {
-        // Verifica se o objeto a ser segurado está definido e se a mão está segurando
-        // if (objectToHold != null && isHoldingObject)
-        // {
-        //     // Define a posição e rotação da mão para coincidir com o objeto a ser segurado
-        //     objectToHold.position = transform.position;
-        //     objectToHold.rotation = transform.rotation;
-        // }
-        // objectToHold.position = transform.position;
-        // objectToHold.rotation = transform.rotation;
-    }
+    // Start is called before the first frame update
+    void Start() {}
+
+    // Update is called once per frame
+    void Update() {}
 }

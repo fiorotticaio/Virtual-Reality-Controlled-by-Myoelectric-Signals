@@ -12981,7 +12981,7 @@ GameObject:
   - component: {fileID: 7835694081366612562}
   m_Layer: 0
   m_Name: Right_Wrist_Joint_01
-  m_TagString: ObjectToHold
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13588,6 +13588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0a71c73ea05f64e8dd16b2ec97a8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdAudio: {fileID: 8300000, guid: 0d9ba9deac23f4ff199b989fe352e768, type: 3}
 --- !u!4 &7896191429166815129
 Transform:
   m_ObjectHideFlags: 0
