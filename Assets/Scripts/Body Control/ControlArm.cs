@@ -88,7 +88,9 @@ public class MoveArm : MonoBehaviour {
         elbowJoint.localRotation = Quaternion.Euler(0f, elbowAngle, 0f); // Creates a rotation around the X axis based on the mapped angle
         graphBar.localRotation = Quaternion.Euler(0f, 0f, 45-elbowAngle); // Use localRotation for local rotation around the X-axis
 
-        targetAngleTime += Time.deltaTime; // Update the time to reach the target angle
+        /* Update the time */
+        time += Time.deltaTime;
+        targetAngleTime += Time.deltaTime; 
     }
 
     void saveData(float elbowAngle, float time) {
