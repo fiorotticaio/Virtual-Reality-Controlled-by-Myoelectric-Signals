@@ -12,12 +12,13 @@ public class MoveArm : MonoBehaviour {
     public Transform arm; // Braço
 
     private float armAngle = 0;
-    private bool change = false;
+    private bool change = true;
 
     // Start is called before the first frame update
     void Start() {
         // serialPort = new SerialPort(portName, baudRate);
         // if (!serialPort.IsOpen) serialPort.Open(); // Verifica se a porta não está aberta
+        armAngle = 90; // Inicializa o ângulo do braço
     }
 
     // Update is called once per frame
@@ -36,15 +37,18 @@ public class MoveArm : MonoBehaviour {
         /* Debug */
         if (!change) {
             armAngle += 1; // Limita o ângulo mínimo
-            if (armAngle >= 90) change = true;
+            if (armAngle == 90) change = true;
         } else {
             armAngle -= 1; // Limita o ângulo máximo
-            if (armAngle <= -90) change = false;
+            if (armAngle == 0) change = false;
         }
+
+        Debug.Log(armAngle);
         
 
         /* Cria uma rotação em torno do eixo X com base no ângulo mapeado */
-        arm.localRotation = Quaternion.Euler(0f, armAngle+60, 0f); // Use localRotation para rotação local em torno do eixo X
+        arm.localRotation = Quaternion.Euler(0f, armAngle, 0f); // Use localRotation para rotação local em torno do eixo X
+        // Debug.Log(armAngle+100);
     }
 
     // void OnApplicationQuit() {
