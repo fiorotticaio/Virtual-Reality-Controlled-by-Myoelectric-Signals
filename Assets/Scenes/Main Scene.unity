@@ -8413,7 +8413,7 @@ Transform:
   m_GameObject: {fileID: 1595825957}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.02451783, z: -0, w: 0.9996994}
-  m_LocalPosition: {x: -0.47700006, y: -0.554, z: -1.5120001}
+  m_LocalPosition: {x: -0.47700006, y: -0.544, z: -1.5120001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8636,8 +8636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce53256f97ca4943aa174e95164a6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM9
-  baudRate: 9600
   elbowJoint: {fileID: 6301278278998734259}
   graphBar: {fileID: 1916838861}
   zeroDegreeText: {fileID: 736868536}
