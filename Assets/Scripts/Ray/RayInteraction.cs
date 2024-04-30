@@ -14,7 +14,9 @@ public class RayInteraction : MonoBehaviour {
         
         /* Set LineRenderer's starting points accordingly to the foot position */
         lineRenderer.SetPosition(0, transform.position); 
-        lineRenderer.SetPosition(1, transform.position + transform.forward * distance); 
+        lineRenderer.SetPosition(1, transform.position + transform.forward * distance);
+        /* Adjust the rotarion of the LineRenderer acording to the transform rotarion */
+        lineRenderer.transform.rotation = transform.rotation;
         lineRenderer.enabled = false; // Initially, the LineRenderer is disabled
     }
 
