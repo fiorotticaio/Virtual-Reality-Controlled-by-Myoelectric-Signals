@@ -26,6 +26,7 @@ public class MoveArm : MonoBehaviour {
     private string uDataFilePath = "Data/uData.csv";
     private string uDataSeparator = ";";
     private string uDataContent;
+    private int fileCount = 0;
 
     private float time = 0.0f; // Time of the movement
     private float targetAngleTime = 0.0f; // Time to reach the target angle
@@ -94,9 +95,8 @@ public class MoveArm : MonoBehaviour {
             uf = uf / 100; // Convert
             ue = ue / 100; // Convert
             
-            Debug.Log(uf);
-            Debug.Log(ue);  
-            Debug.Log(elbowAngle);
+            Debug.Log(fileCount + " uf: " + uf + " ue: " + ue);
+            // Debug.Log(elbowAngle);
 
             saveUData(uf, ue); // Save the data in a csv file
 
@@ -125,8 +125,9 @@ public class MoveArm : MonoBehaviour {
     }
 
     void saveUData(float uf, float ue) {
-        uDataContent = uf.ToString() + uDataSeparator + ue + "\n"; // Create the csv content with the time
+        uDataContent = fileCount + uDataSeparator + uf.ToString() + uDataSeparator + ue + "\n"; // Create the csv content with the time
         File.AppendAllText(uDataFilePath, uDataContent); // Append the content to the csv file
+        fileCount++;
     }
 
     void saveData(float elbowAngle, float time) {
