@@ -23,6 +23,9 @@ public class MoveArm : MonoBehaviour {
     private string csvFilePath = "Data/biofeedback-graph-bar-" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv";
     private string csvSeparator = ";";
     private string csvContent;
+    private string uDataFilePath = "Data/uData.csv";
+    private string uDataSeparator = ";";
+    private string uDataContent;
 
     private float time = 0.0f; // Time of the movement
     private float targetAngleTime = 0.0f; // Time to reach the target angle
@@ -85,10 +88,17 @@ public class MoveArm : MonoBehaviour {
             string serialData = serialPort.ReadLine(); // Reads a line of data from the serial port
             string[] values = serialData.Split(','); // Divide values separated by comma
             float elbowAngle = float.Parse(values[4]); // Convert string to float
+            float uf = float.Parse(values[2]); // Convert string to float
+            float ue = float.Parse(values[3]); // Convert string to float
             elbowAngle = elbowAngle / 100; // Convert to degrees
+            uf = uf / 100; // Convert
+            ue = ue / 100; // Convert
             
-            Debug.Log(serialData);
+            Debug.Log(uf);
+            Debug.Log(ue);  
             Debug.Log(elbowAngle);
+
+            saveUData(uf, ue); // Save the data in a csv file
 
             if (startSavingData) {
                 saveData(elbowAngle, time); // Save the data in a csv file
@@ -112,6 +122,11 @@ public class MoveArm : MonoBehaviour {
         /* Update the time */
         time += Time.deltaTime;
         targetAngleTime += Time.deltaTime; 
+    }
+
+    void saveUData(float uf, float ue) {
+        uDataContent = uf.ToString() + uDataSeparator + ue + "\n"; // Create the csv content with the time
+        File.AppendAllText(uDataFilePath, uDataContent); // Append the content to the csv file
     }
 
     void saveData(float elbowAngle, float time) {
