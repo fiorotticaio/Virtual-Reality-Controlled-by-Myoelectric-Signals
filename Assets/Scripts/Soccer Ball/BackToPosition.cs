@@ -5,15 +5,21 @@ using UnityEngine;
 public class BackToPosition : MonoBehaviour {
 
     private Rigidbody ballRigidbody; // Rigidbody component
-    public float positionX; // X position
-    public float positionY; // Y position
-    public float positionZ; // Z position
+    public float positionX1; // X position 1
+    public float positionY1; // Y position 2 
+    public float positionZ1; // Z position 3
+    public float positionX2; // X position 4
+    public float positionY2; // Y position 5
+    public float positionZ2; // Z position 6
     public float lateralSpeed;
     public float maxSpeed;
+
+    private bool changePosition = false;
 
     // Start is called before the first frame update
     void Start() {
         ballRigidbody = GetComponent<Rigidbody>(); // Get the rigidbody component
+        Debug.Log("Atual pos: " + transform.position);
     }
 
     // Update is called once per frame
@@ -27,8 +33,17 @@ public class BackToPosition : MonoBehaviour {
     }
 
     public void setPosition() {
-        Vector3 newPosition = new Vector3(positionX, positionY, positionZ); // Values got in Unity 
-        transform.position = newPosition; // Add in the self element
-        ballRigidbody.velocity = Vector3.zero; // Reset the velocity
+        /* Each time the object goes to a diff place */
+        if (changePosition) {
+            changePosition = false;
+            Vector3 newPosition = new Vector3(positionX1, positionY1, positionZ1); // Values got in Unity 
+            transform.position = newPosition; // Add in the self element
+            ballRigidbody.velocity = Vector3.zero; // Reset the velocity
+        } else {
+            changePosition = true;
+            Vector3 newPosition = new Vector3(positionX2, positionY2, positionZ2); // Values got in Unity 
+            transform.position = newPosition; // Add in the self element
+            ballRigidbody.velocity = Vector3.zero; // Reset the velocity
+        }
     }
 }
