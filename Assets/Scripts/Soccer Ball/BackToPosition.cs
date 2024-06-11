@@ -19,7 +19,6 @@ public class BackToPosition : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         ballRigidbody = GetComponent<Rigidbody>(); // Get the rigidbody component
-        Debug.Log("Atual pos: " + transform.position);
     }
 
     // Update is called once per frame

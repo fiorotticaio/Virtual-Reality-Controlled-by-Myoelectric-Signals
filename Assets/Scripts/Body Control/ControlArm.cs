@@ -39,9 +39,6 @@ public class MoveArm : MonoBehaviour {
 
     // Debug
     float elbowAngle = 0.0f; // Angle of the elbow
-    public float rotationSpeed = 250.0f; // Degrees per second
-    private float rotationDirection = 1.0f; // 1.0f or -1.0f
-    public float translationSpeed = 1.0f; // Meters per second
 
 
     // Start is called before the first frame update
