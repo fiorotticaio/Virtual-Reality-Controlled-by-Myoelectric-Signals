@@ -4116,23 +4116,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.27024603, y: -0.041899905, z: -0.000000059604645}
     m_Extent: {x: 0.95254505, y: 0.23127724, z: 0.6514181}
   m_DirtyAABB: 0
---- !u!114 &947422134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7739895299307242558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3bdbee682c9b904d979dc6f58a799c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 150
-  translationSpeed: 1
-  rightThigh: {fileID: 1446455205712393421}
-  rightLeg: {fileID: 8574567988087595133}
-  rightFoot: {fileID: 8272672272024937731}
 --- !u!1 &948116109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4609,7 +4592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1043560091
 Transform:
   m_ObjectHideFlags: 0
@@ -5069,10 +5052,10 @@ MonoBehaviour:
   m_IsTrackedAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Is Tracked
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 051bd66e-718a-494f-979c-0745146c0af8
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -5172,10 +5155,10 @@ MonoBehaviour:
   m_UIScrollAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Scroll
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 
+      m_Id: f387a8df-029d-4aa0-a537-a384ec2c2716
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -8552,6 +8535,8 @@ MonoBehaviour:
   fortyFiveDegreeText: {fileID: 2033018676}
   seventyDegreeText: {fileID: 1381216526}
   ninetyDegreeText: {fileID: 1109322073}
+  rotationSpeed: 250
+  translationSpeed: 1
 --- !u!1 &1639031123
 GameObject:
   m_ObjectHideFlags: 0
@@ -12515,7 +12500,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5721280812265485367}
-  - component: {fileID: 947422134}
   m_Layer: 0
   m_Name: Hip
   m_TagString: Untagged

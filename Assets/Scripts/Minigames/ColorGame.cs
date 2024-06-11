@@ -33,7 +33,7 @@ public class ColorGame : MonoBehaviour {
     private string csvFilePath = "Data/mainScene/colorGame" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv";
     private string csvContent;
 
-    private float TIME_OF_GAME = 10f; // Time of the game
+    private float TIME_OF_GAME = 20f; // Time of the game
 
 
     // Start is called before the first frame update
@@ -79,7 +79,7 @@ public class ColorGame : MonoBehaviour {
             }
         }
 
-        if (startGame && time >= TIME_OF_GAME) { // If the time game is over (50 seconds)
+        if (startGame && (time >= TIME_OF_GAME)) { // If the time game is over (50 seconds)
             startGame = false; // Set the flag to false
             saveData(scorePoints); // Save the score points
             backgroundImage.color = new Color(0.5f, 0.5f, 0.5f); // Set the color of the game background gray
@@ -123,6 +123,6 @@ public class ColorGame : MonoBehaviour {
         scorePoints = 0; // Set the score points to 0
         time = 0.0f; // Initialize time
         backgroundImage.color = new Color(0.5449448f, 0.735849f, 0.6624243f); // Set the color of the game background green
-        csvFilePath = "Data/mainScene/colorGame" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv"; // Update the csv file path
+        csvFilePath = "Data/colorGame" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv"; // Update the csv file path
     }
 }
