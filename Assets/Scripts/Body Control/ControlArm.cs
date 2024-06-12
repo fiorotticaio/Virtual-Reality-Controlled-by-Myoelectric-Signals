@@ -16,10 +16,10 @@ public class MoveArm : MonoBehaviour {
     public Transform elbowJoint; // The arm that will be controlled
     public Transform graphBar; // The graphic bar that will ilustrate the albow angle
 
-    private string csvFilePath = "Data/biofeedback-graph-bar-" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv";
+    private string csvFilePath = "Data/mainScene/biofeedback-graph-bar-" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv";
     private string csvSeparator = ";";
     private string csvContent;
-    private string uDataFilePath = "Data/uData.csv";
+    private string uDataFilePath = "Data/mainScene/uData.csv";
     private string uDataSeparator = ";";
     private string uDataContent;
     private int fileCount = 0;
@@ -123,7 +123,7 @@ public class MoveArm : MonoBehaviour {
 
         degreeTexts[idx].color = Color.red; // Change the color of the text selected to red
 
-        csvFilePath = "Data/biofeedback-graph-bar-" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv"; // Update the csv file path
+        csvFilePath = "Data/mainScene/biofeedback-graph-bar-" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv"; // Update the csv file path
     }
 
 
