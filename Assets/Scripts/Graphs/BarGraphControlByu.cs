@@ -12,7 +12,7 @@ public class BarGraphControlByu : MonoBehaviour {
     public Transform extendGraphBar;
     public Transform flexGraphBar;
 
-    public string portName = "COM6"; // Appropriate serial port
+    public string portName = "COM9"; // Appropriate serial port
     public int baudRate = 9600;
     private SerialPort serialPort;
 

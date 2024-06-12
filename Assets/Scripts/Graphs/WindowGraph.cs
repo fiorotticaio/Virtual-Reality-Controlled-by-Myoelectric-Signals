@@ -16,28 +16,24 @@ public class WindowGraph : MonoBehaviour {
     private RectTransform graphContainer;
     private GameObject originPoint;
 
-    public string portName = "COM6";
+    public string portName = "COM9";
     public int baudRate = 9600;
     private SerialPort serialPort;
-
-    public string myosymSceneCode = "AE06"; // Myosym code to send uf and ue
 
     private string csvFilePath = "Data/secondStep.csv";
     private string csvSeparator = ";";
     private string csvContent;
 
-    /* Patient cocontraction parameters */
-    private float mf;
-    private float me;
-    private float m0;
-    private float uf_max;
-    private float ue_max;
-    private float uf_min;
-    private float ue_min;
-    private float vel_max;
-    private float K_max;
-    private float ENV_Freq = 15;
-
+    /* Default values (change after calculation) */
+    private float mf = 10.0f;
+    private float me = 0.1f;
+    private float m0 = 5.0f;
+    private float uf_max = 4000.0f;
+    private float ue_max = 4000.0f;
+    private float uf_min = 1800.0f;
+    private float ue_min = 2000.0f;
+    private float vel_max = 60f;
+    private float K_max = 7f;
 
     void Start() {
         graphContainer = transform.Find("Graph Container").GetComponent<RectTransform>(); // Find the Graph Container
@@ -47,10 +43,7 @@ public class WindowGraph : MonoBehaviour {
         serialPort = new SerialPort(portName, baudRate);
         if (!serialPort.IsOpen) serialPort.Open(); // Verify if port is not open
 
-        calculateParameterByPython(); // Execute the python script to calculate the parameters
-        
-        byte[] bytesToSend = { 0xAE, 0x05 }; // EMG normalized values
-        serialPort.Write(bytesToSend, 0, bytesToSend.Length);
+        calculateParameterByPython();
 
         /* Create cocontraction points */
         float mfx = findMfx(mf);
@@ -94,8 +87,8 @@ public class WindowGraph : MonoBehaviour {
         string serialData = serialPort.ReadLine(); // Reads a line of data from the serial port
         string[] values = serialData.Split(','); // Divide the comma-separated values
         CultureInfo culture = new CultureInfo("en-US"); // Culture for float conversion
-        float uf = float.Parse(values[0], culture);
-        float ue = float.Parse(values[1], culture);
+        float uf = float.Parse(values[2], culture);
+        float ue = float.Parse(values[3], culture);
 
         UnityEngine.Debug.Log("uf: " + uf + "; ue: " + ue); // Show the u value in the console
 
@@ -176,7 +169,7 @@ public class WindowGraph : MonoBehaviour {
     }
 
     void saveData(float uf, float ue) {
-        if (uf > 2 || ue > 2) return; // Ignore the first values (delay in myosym to change state)
+        if (uf > 2 || ue > 2) return; // Ignore outliers
         csvContent = uf.ToString() + csvSeparator + ue.ToString() + "\n";
         File.AppendAllText(csvFilePath, csvContent);
     }
@@ -188,9 +181,7 @@ public class WindowGraph : MonoBehaviour {
     private void calculateParameterByPython() {
         /* Execute the python script to calculate cocontraction parameters */
         string pythonPath = @"C:\Users\Caio\AppData\Local\Microsoft\WindowsApps\python.exe";
-        // string pythonPath = @"C:\Users\buzat\AppData\Local\Programs\Python\Python39\python.exe";
-        string scriptPath = @"C:\Users\Caio\UFES\IC\MyoController-LegProsthesis\src\cocontraction.py";
-        // string scriptPath = @"C:\Users\buzat\Desktop\OCULUS-QUEST-2\MyoController-LegProsthesis\src\cocontraction.py";
+        string scriptPath = @"C:\Users\Caio\UFES\Engenharia da Computação\7º Período\PIC-II\Hardware-and-auxiliary-codes-for-the-biomechanical-system\Scripts python";
         
         ProcessStartInfo startInfo = new ProcessStartInfo();
         startInfo.FileName = pythonPath;
@@ -226,29 +217,12 @@ public class WindowGraph : MonoBehaviour {
         vel_max = float.Parse(values[7], culture);
         K_max = float.Parse(values[8], culture);
 
-        var parametersInFloat = new float[] { mf, me, uf_max, ue_max, uf_min, ue_min, vel_max, K_max, ENV_Freq};
-        sendParameterToMyoSym(parametersInFloat);
+        UnityEngine.Debug.Log("mf: " + mf + "; me: " + me + "; m0: " + m0 + "; uf_max: " + uf_max + "; ue_max: " + ue_max + "; uf_min: " + uf_min + "; ue_min: " + ue_min + "; vel_max: " + vel_max + "; K_max: " + K_max); // Show the u value in the console
 
         /* Save the parameters in the PlayerPrefs to get in the next scene */
         PlayerPrefs.SetFloat("uf_max", uf_max);
         PlayerPrefs.SetFloat("ue_max", ue_max);
         PlayerPrefs.SetFloat("uf_min", uf_min);
         PlayerPrefs.SetFloat("ue_min", ue_min);
-    }
-
-    void sendParameterToMyoSym(float[] parametersInFloat) {
-        /* Create a byte array and copy the floats into it */
-        var parametersInBytes = new byte[parametersInFloat.Length * 4];
-        Buffer.BlockCopy(parametersInFloat, 0, parametersInBytes, 0, parametersInBytes.Length);
-
-        /* Command bytes of Myosym */
-        byte[] MyoSymCommand = { 0xAE, 0x07 }; // Send data
-
-        /* Concatenate the command and data array */
-        byte[] bytesToSend = new byte[MyoSymCommand.Length + parametersInBytes.Length];
-        Array.Copy(MyoSymCommand, bytesToSend, MyoSymCommand.Length);
-        Array.Copy(parametersInBytes, 0, bytesToSend, MyoSymCommand.Length, parametersInBytes.Length);
-
-        serialPort.Write(bytesToSend, 0, bytesToSend.Length); // Send the data
     }
 }
