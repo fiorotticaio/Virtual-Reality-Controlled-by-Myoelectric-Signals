@@ -12,8 +12,8 @@ public class BarGraphControlByu : MonoBehaviour {
     public Transform extendGraphBar;
     public Transform flexGraphBar;
 
-    public string portName = "COM9"; // Appropriate serial port
-    public int baudRate = 9600;
+    private string portName = "COM9"; // Appropriate serial port
+    private int baudRate = 9600;
     private SerialPort serialPort;
 
     public TextMeshProUGUI textTimeExtend; // Text to show the time of the movement
@@ -29,10 +29,10 @@ public class BarGraphControlByu : MonoBehaviour {
 
     private float minGraphPositionY = -130f;
     private float maxGraphPositionY = -40f;
-    private float minValueCh1 = 2f;
-    private float maxValueCh1 = 20f;
-    private float minValueCh2 = 2f;
-    private float maxValueCh2 = 20f;
+    private float minValueCh1 = 1500f;
+    private float maxValueCh1 = 5000f;
+    private float minValueCh2 = 1500f;
+    private float maxValueCh2 = 5000f;
 
 
     // Start is called before the first frame update
