@@ -16,7 +16,7 @@ public class WindowGraph : MonoBehaviour {
     private RectTransform graphContainer;
     private GameObject originPoint;
 
-    public string portName = "COM9";
+    private string portName = "COM9";
     public int baudRate = 9600;
     private SerialPort serialPort;
 
@@ -181,7 +181,7 @@ public class WindowGraph : MonoBehaviour {
     private void calculateParameterByPython() {
         /* Execute the python script to calculate cocontraction parameters */
         string pythonPath = @"C:\Users\Caio\AppData\Local\Microsoft\WindowsApps\python.exe";
-        string scriptPath = @"C:\Users\Caio\UFES\Engenharia da Computação\7º Período\PIC-II\Hardware-and-auxiliary-codes-for-the-biomechanical-system\Scripts python";
+        string scriptPath = @"C:\Users\Caio\UFES\Engenharia da Computação\7º Período\PIC-II\Hardware-and-auxiliary-codes-for-the-biomechanical-system\Scripts python\calc_params.py";
         
         ProcessStartInfo startInfo = new ProcessStartInfo();
         startInfo.FileName = pythonPath;
