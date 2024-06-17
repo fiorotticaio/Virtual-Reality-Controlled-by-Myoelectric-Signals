@@ -123,6 +123,6 @@ public class ColorGame : MonoBehaviour {
         scorePoints = 0; // Set the score points to 0
         time = 0.0f; // Initialize time
         backgroundImage.color = new Color(0.5449448f, 0.735849f, 0.6624243f); // Set the color of the game background green
-        csvFilePath = "Data/colorGame" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv"; // Update the csv file path
+        csvFilePath = "Data/mainScene/colorGame" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".csv"; // Update the csv file path
     }
 }
