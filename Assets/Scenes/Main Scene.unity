@@ -3302,7 +3302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &859225393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8538,8 +8538,6 @@ MonoBehaviour:
   fortyFiveDegreeText: {fileID: 2033018676}
   seventyDegreeText: {fileID: 1381216526}
   ninetyDegreeText: {fileID: 1109322073}
-  rotationSpeed: 250
-  translationSpeed: 1
 --- !u!1 &1639031123
 GameObject:
   m_ObjectHideFlags: 0
