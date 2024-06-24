@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MoveArm : MonoBehaviour {
+public class ControlArm : MonoBehaviour {
     private SerialPort serialPort;
     private string portName = "COM9";
     private int baudRate = 9600;
@@ -37,9 +37,6 @@ public class MoveArm : MonoBehaviour {
 
     private float TIME_OF_GAME = 10f; // Time of the game
 
-    // Debug
-    float elbowAngle = 0.0f; // Angle of the elbow
-
 
     // Start is called before the first frame update
     void Start() {
@@ -59,10 +56,10 @@ public class MoveArm : MonoBehaviour {
         if (serialPort.IsOpen) {
             string serialData = serialPort.ReadLine(); // Reads a line of data from the serial port
             string[] values = serialData.Split(','); // Divide values separated by comma
-            // float elbowAngle = float.Parse(values[4]); // Convert string to float
+            float elbowAngle = float.Parse(values[4]); // Convert string to float
             float uf = float.Parse(values[2]); // Convert string to float
             float ue = float.Parse(values[3]); // Convert string to float
-            // elbowAngle = elbowAngle / 100; // Convert to degrees
+            elbowAngle = elbowAngle / 100; // Convert to degrees
             uf = uf / 100; // Convert
             ue = ue / 100; // Convert
             
@@ -85,12 +82,6 @@ public class MoveArm : MonoBehaviour {
                 }
             } 
 
-            // Debug
-            if (Input.GetKeyDown(KeyCode.UpArrow)) {
-                if (elbowAngle < 90) elbowAngle += 5; // Increase the angle
-            } else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-                if (elbowAngle > 0) elbowAngle -= 5; // Decrease the angle
-            }
             elbowJoint.localRotation = Quaternion.Euler(0f, elbowAngle, 0f); // Creates a rotation around the X axis based on the mapped angle
             graphBar.localRotation = Quaternion.Euler(0f, 0f, 45-elbowAngle); // Use localRotation for local rotation around the X-axis
         }

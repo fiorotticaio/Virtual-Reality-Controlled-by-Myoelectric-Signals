@@ -1355,6 +1355,7 @@ GameObject:
   - component: {fileID: 465137043}
   - component: {fileID: 465137042}
   - component: {fileID: 465137046}
+  - component: {fileID: 465137047}
   m_Layer: 0
   m_Name: Window Graph
   m_TagString: Untagged
@@ -1478,8 +1479,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circleSprite: {fileID: 21300000, guid: 35b5e9e2e7322254c84b17b2edd0b1a3, type: 3}
-  portName: COM6
-  baudRate: 9600
+--- !u!114 &465137047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465137039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eacb256d309c0ec45ba20de3bdb00a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToGo: Main Scene
 --- !u!1 &549542313
 GameObject:
   m_ObjectHideFlags: 0
