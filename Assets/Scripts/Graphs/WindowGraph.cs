@@ -24,15 +24,15 @@ public class WindowGraph : MonoBehaviour {
     private string csvSeparator = ";";
     private string csvContent;
 
-    /* Default values (change after calculation) */
-    private float mf = 10.0f;
-    private float me = 0.1f;
-    private float m0 = 5.0f;
+    /* Default values (changed after calculation of parameters) */
+    private float mf = 11.0f;
+    private float me = 0.5f;
+    private float m0 = 1.5f;
     private float uf_max = 4000.0f;
     private float ue_max = 4000.0f;
-    private float uf_min = 1800.0f;
+    private float uf_min = 2000.0f;
     private float ue_min = 2000.0f;
-    private float vel_max = 60f;
+    private float vel_max = 70f;
     private float K_max = 7f;
 
     void Start() {
