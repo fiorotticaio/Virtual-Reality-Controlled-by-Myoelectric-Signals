@@ -10,7 +10,7 @@ using TMPro;
 
 public class ControlArm : MonoBehaviour {
     private SerialPort serialPort;
-    private string portName = "COM9";
+    private string portName = "COM11";
     private int baudRate = 9600;
 
     public Transform elbowJoint; // The arm that will be controlled

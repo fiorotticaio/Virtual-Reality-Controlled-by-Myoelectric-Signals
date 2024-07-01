@@ -7,12 +7,14 @@ using System.IO.Ports;
 using System.Globalization;
 using TMPro;
 using static System.IO.File;
+using System.Threading;
+
 
 public class BarGraphControlByu : MonoBehaviour {
     public Transform extendGraphBar;
     public Transform flexGraphBar;
 
-    private string portName = "COM9"; // Appropriate serial port
+    private string portName = "COM11"; // Appropriate serial port
     private int baudRate = 9600;
     private SerialPort serialPort;
 
@@ -22,23 +24,26 @@ public class BarGraphControlByu : MonoBehaviour {
 
     private string csvFilePathExtension = "Data/firstStep/extension.csv";
     private string csvFilePathFlexion = "Data/firstStep/flexion.csv";
-    private string csvSeparator = ";";
+    private string csvSeparator = ",";
     private string csvContent;
 
     private bool startSaveExtensionData = false, startSaveFlexionData = false;
 
     private float minGraphPositionY = -130f;
     private float maxGraphPositionY = -40f;
-    private float minValueCh1 = 1500f;
-    private float maxValueCh1 = 5000f;
-    private float minValueCh2 = 1500f;
-    private float maxValueCh2 = 5000f;
+    private float minValueCh1 = 400f;
+    private float maxValueCh1 = 6000f;
+    private float minValueCh2 = 400f;
+    private float maxValueCh2 = 6000f;
 
 
     // Start is called before the first frame update
     void Start() {
         serialPort = new SerialPort(portName, baudRate);
         if (!serialPort.IsOpen) serialPort.Open(); // Verify if port is not open
+
+        /* Wait two seconds */
+        // Thread.Sleep(1000);
 
         time = 0.0f; // Initialize time
     }
