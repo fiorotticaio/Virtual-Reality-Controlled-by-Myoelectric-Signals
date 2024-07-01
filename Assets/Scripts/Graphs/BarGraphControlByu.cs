@@ -24,7 +24,7 @@ public class BarGraphControlByu : MonoBehaviour {
 
     private string csvFilePathExtension = "Data/firstStep/extension.csv";
     private string csvFilePathFlexion = "Data/firstStep/flexion.csv";
-    private string csvSeparator = ",";
+    private string csvSeparator = ";";
     private string csvContent;
 
     private bool startSaveExtensionData = false, startSaveFlexionData = false;
