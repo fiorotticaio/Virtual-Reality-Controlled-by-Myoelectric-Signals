@@ -67,6 +67,19 @@ public class BarGraphControlByu : MonoBehaviour {
             handleFlexGraphBar(ch1);
         }
 
+
+        /* Creating files by pressing keys */
+        if (Input.GetKeyDown(KeyCode.E)) { // Extension
+            startSaveExtensionData = !startSaveExtensionData;
+            time = 0.0f; // Reset time
+            csvContent = ""; // Reset csv content
+        }
+        if (Input.GetKeyDown(KeyCode.F)) { // Flexion
+            startSaveFlexionData = !startSaveFlexionData;
+            time = 0.0f; // Reset time
+            csvContent = ""; // Reset csv content
+        }
+
         /* Update the time */
         time += Time.deltaTime; // Increment the time
         textTimeExtend.text = time.ToString("F1"); // Show the time with 1 decimal places
