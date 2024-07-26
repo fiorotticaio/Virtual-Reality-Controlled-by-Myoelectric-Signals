@@ -6,7 +6,7 @@
 
 ### Brief description
 
-This project aims to utilize ECG sensors to analyze and harness muscle signal data to enhance treatments for individuals with partial limb disabilities, such as those with incomplete upper or lower extremities, with the support of a virtual reality environment.
+This project aims to utilize EMG sensors to analyze and harness muscle signal data to enhance treatments for individuals with partial limb disabilities, such as those with incomplete upper or lower extremities, with the support of a virtual reality environment.
 
 ### How it works
 
