@@ -16,6 +16,16 @@ Parameters are calculated automatically, and contraction and extension maps are 
 
 After calibration, the main scene starts, and the patient can see the mechanical arm moving in response to muscle activation.
 
+### Games
+
+There's a few mini-games in the main scene, designed to engage the patient in a fun way. Using the Quest 2 controller, the user can select the game they want to try.
+
+The first is a challenge where the user tries to keep the mechanical arm at a certain angle indicated on the screen. It is simple to understand, but much more challenging than it seems.
+
+The second is the color game. By moving the mechanical arm, the patient must point to the correct color, indicated on the screen, and pull the trigger on the controller to score.
+
+Additionally, the user can simulate the motion of picking an apple in the "move apple" option.
+
 ## Hardware
 
 These were the key materials utilized on the project:
