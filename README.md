@@ -24,7 +24,7 @@ The first is a challenge where the user tries to keep the mechanical arm at a ce
 
 The second is the color game. By moving the mechanical arm, the patient must point to the correct color, indicated on the screen, and pull the trigger on the controller to score.
 
-Additionally, the user can simulate the motion of picking an apple in the "move apple" option.
+Additionally, the user can simulate the action of picking an apple in the "move apple" option.
 
 ## Hardware
 
