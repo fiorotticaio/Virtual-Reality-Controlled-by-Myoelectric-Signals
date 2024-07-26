@@ -14,6 +14,16 @@ Os parâmetros são calculados automaticamente, e os mapas de contração e exte
 
 Após a calibração, a cena principal começa, e o paciente pode ver o braço mecânico se movendo em resposta à ativação muscular.
 
+### Jogos
+
+Existem alguns *mini-games* dentro da cena principal, que servem para estimular o paciente de uma maneira divertida. Com o controle do Quest 2, o usuário pode selecionar o jogo que quer testar.
+
+O primeiro é um desafio para que o usuário tente manter a angulação do braço mecânico em um certo ângulo indicado na tela. Simples de entender, mas muito mais desafiador do que parece
+
+O segundo é o jogo das cores. Movendo o braço mecânico, o paciente deve apontar para a cor correta, indicada na tela, e apertar o gatilho do controle.
+
+Além disso, o usuário pode simular o movimento de pegar uma maçã, na opção "mover maçã".
+
 ## Hardware
 
 Estes foram os principais materiais utilizados no projeto:
