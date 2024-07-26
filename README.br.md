@@ -4,7 +4,7 @@
 
 ### Descrição Breve
 
-Este projeto visa utilizar sensores de ECG para analisar e aproveitar dados de sinais musculares para aprimorar tratamentos para indivíduos com deficiências parciais nos membros, como aqueles com extremidades superiores ou inferiores incompletas, com o suporte de um ambiente de realidade virtual.
+Este projeto visa utilizar sensores de EMG para analisar e aproveitar dados de sinais musculares para aprimorar tratamentos para indivíduos com deficiências parciais nos membros, como aqueles com extremidades superiores ou inferiores incompletas, com o suporte de um ambiente de realidade virtual.
 
 ### Como Funciona
 
