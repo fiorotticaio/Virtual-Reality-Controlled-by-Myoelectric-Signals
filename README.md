@@ -16,16 +16,6 @@ Parameters are calculated automatically, and contraction and extension maps are 
 
 After calibration, the main scene starts, and the patient can see the mechanical arm moving in response to muscle activation.
 
-### Games
-
-There's a few mini-games in the main scene, designed to engage the patient in a fun way. Using the Quest 2 controller, the user can select the game they want to try.
-
-The first is a challenge where the user tries to keep the mechanical arm at a certain angle indicated on the screen. It is simple to understand, but much more challenging than it seems.
-
-The second is the color game. By moving the mechanical arm, the patient must point to the correct color, indicated on the screen, and pull the trigger on the controller to score.
-
-Additionally, the user can simulate the action of picking an apple in the "move apple" option.
-
 ## Hardware
 
 These were the key materials utilized on the project:
@@ -38,10 +28,17 @@ These were the key materials utilized on the project:
 - Virtual Reality Glasses - (Oculus Quest 2)
 - Disposable Razor
 - Sterilizing Alcohol
+- Usb-Serial Converter
 
 ### Myoware Sensors
 
 <img src="media/myoware.png" height="300px"/>
+
+### Myoware Sensors - Main setup
+
+<img src="media/arm.png" width="500px"/>
+
+<img src="media/overview.png" width="500px"/>
 
 ### Project Schematic
 
@@ -50,6 +47,8 @@ These were the key materials utilized on the project:
 ### Arduino Board
 
 <img src="media/board.png" width="500px"/>
+
+<img src="media/board2.png" width="500px"/>
 
 ## Software
 
@@ -70,6 +69,18 @@ For the software setup specifics, some key applications were used:
 ### Virtual Reality Environment - Simulation
 
 <img src="media/virtual-reality.png" width="500px"/>
+
+### Games
+
+There's a few mini-games in the main scene, designed to engage the patient in a fun way. Using the Quest 2 controller, the user can select the game they want to try.
+
+The first is a challenge where the user tries to keep the mechanical arm at a certain angle indicated on the screen. It is simple to understand, but much more challenging than it seems.
+
+The second is the color game. By moving the mechanical arm, the patient must point to the correct color, indicated on the screen, and pull the trigger on the controller to score.
+
+Additionally, the user can simulate the action of picking an apple in the "move apple" option.
+
+<img src="media/games.png" width="500px"/>
 
 ### More footage
 
