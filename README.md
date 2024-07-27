@@ -29,6 +29,18 @@ These were the key materials utilized on the project:
 - Disposable Razor
 - Sterilizing Alcohol
 
+### Myoware Sensors
+
+<img src="media/myoware.png" height="300px"/>
+
+### Project Schematic
+
+<img src="media/schematic.png" width="500px"/>
+
+### Arduino Board
+
+<img src="media/board.png" width="500px"/>
+
 ## Software
 
 For the software setup specifics, some key applications were used:
@@ -41,7 +53,15 @@ For the software setup specifics, some key applications were used:
 
 ## Media
 
-This project was presented on the [Computing and Technology Exhibition](https://computacao-ufes.github.io/mostra/pic2_EC_20241.html) at the [Universidade Federal do Espírito Santo](ufes.br).
+### Virtual Reality Environment - Calibration
+
+<img src="media/calibration.png" width="500px"/>
+
+### Virtual Reality Environment - Simulation
+
+<img src="media/virtual-reality.png" width="500px"/>
+
+### More footage
 
 On [this video](https://youtu.be/uEduPgnbO7c) more details are presented showing how the system works.
 
@@ -50,3 +70,8 @@ On [this video](https://youtu.be/uEduPgnbO7c) more details are presented showing
 - [@fiorotticaio](https://github.com/fiorotticaio)
 - [@matheusschreiber](https://github.com/matheusschreiber)
 - [@viniciuscole](https://github.com/viniciuscole)
+
+
+## Extra
+
+This project was presented on the [Computing and Technology Exhibition](https://computacao-ufes.github.io/mostra/pic2_EC_20241.html) at the [Universidade Federal do Espírito Santo](ufes.br).

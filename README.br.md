@@ -27,6 +27,18 @@ Estes foram os principais materiais utilizados no projeto:
 - Lâmina Descartável
 - Álcool Esterilizante
 
+### Sensores Myoware
+
+<img src="media/myoware.png" height="300px"/>
+
+### Esquemático do Projeto
+
+<img src="media/schematic.png" width="500px"/>
+
+### Placa Arduino
+
+<img src="media/board.png" width="500px"/>
+
 ## Software
 
 Para as especificações de configuração do software, foram utilizados alguns aplicativos chave:
@@ -39,7 +51,15 @@ Para as especificações de configuração do software, foram utilizados alguns 
 
 ## Mídia
 
-Este projeto foi apresentado na [Exposição de Computação e Tecnologia](https://computacao-ufes.github.io/mostra/pic2_EC_20241.html) na [Universidade Federal do Espírito Santo](ufes.br).
+### Ambiente de Realidade Virtual - Calibração
+
+<img src="media/calibration.png" width="500px"/>
+
+### Ambiente de Realidade Virtual - Simulação
+
+<img src="media/virtual-reality.png" width="500px"/>
+
+### Mais informações
 
 Neste [vídeo](https://youtu.be/uEduPgnbO7c) mais detalhes são apresentados mostrando como o sistema funciona.
 
@@ -48,3 +68,7 @@ Neste [vídeo](https://youtu.be/uEduPgnbO7c) mais detalhes são apresentados mos
 - [@fiorotticaio](https://github.com/fiorotticaio)
 - [@matheusschreiber](https://github.com/matheusschreiber)
 - [@viniciuscole](https://github.com/viniciuscole)
+
+## Bonus
+
+Este projeto foi apresentado na [Exposição de Computação e Tecnologia](https://computacao-ufes.github.io/mostra/pic2_EC_20241.html) na [Universidade Federal do Espírito Santo](ufes.br).
