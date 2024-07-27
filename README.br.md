@@ -4,7 +4,7 @@
 
 ### Descrição Breve
 
-Este projeto visa utilizar sensores de ECG para analisar e aproveitar dados de sinais musculares para aprimorar tratamentos para indivíduos com deficiências parciais nos membros, como aqueles com extremidades superiores ou inferiores incompletas, com o suporte de um ambiente de realidade virtual.
+Este projeto visa utilizar sensores de EMG para analisar e aproveitar dados de sinais musculares para aprimorar tratamentos para indivíduos com deficiências parciais nos membros, como aqueles com extremidades superiores ou inferiores incompletas, com o suporte de um ambiente de realidade virtual.
 
 ### Como Funciona
 
@@ -13,6 +13,16 @@ Dois sensores musculares são fixados no braço do paciente, um no bíceps e o o
 Os parâmetros são calculados automaticamente, e os mapas de contração e extensão são exibidos na cena do Unity. A equipe avalia a qualidade da calibração e, se necessário, a calibração pode ser repetida. Durante esse processo, o usuário pode ver os valores normalizados dos sensores no gráfico.
 
 Após a calibração, a cena principal começa, e o paciente pode ver o braço mecânico se movendo em resposta à ativação muscular.
+
+### Jogos
+
+Existem alguns *mini-games* dentro da cena principal, que servem para estimular o paciente de uma maneira divertida. Com o controle do Quest 2, o usuário pode selecionar o jogo que quer testar.
+
+O primeiro é um desafio para que o usuário tente manter a angulação do braço mecânico em um certo ângulo indicado na tela. Simples de entender, mas muito mais desafiador do que parece
+
+O segundo é o jogo das cores. Movendo o braço mecânico, o paciente deve apontar para a cor correta, indicada na tela, e apertar o gatilho do controle.
+
+Além disso, o usuário pode simular o movimento de pegar uma maçã, na opção "mover maçã".
 
 ## Hardware
 

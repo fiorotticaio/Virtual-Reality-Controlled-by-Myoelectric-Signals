@@ -6,7 +6,7 @@
 
 ### Brief description
 
-This project aims to utilize ECG sensors to analyze and harness muscle signal data to enhance treatments for individuals with partial limb disabilities, such as those with incomplete upper or lower extremities, with the support of a virtual reality environment.
+This project aims to utilize EMG sensors to analyze and harness muscle signal data to enhance treatments for individuals with partial limb disabilities, such as those with incomplete upper or lower extremities, with the support of a virtual reality environment.
 
 ### How it works
 
@@ -15,6 +15,16 @@ Two muscle sensors are attached to the patient's arm, one on the biceps and the 
 Parameters are calculated automatically, and contraction and extension maps are displayed in the Unity scene. The team evaluates the calibration quality based on these and repeat the calibration if needed. During this process, the user can see normalized sensor values on the graph.
 
 After calibration, the main scene starts, and the patient can see the mechanical arm moving in response to muscle activation.
+
+### Games
+
+There's a few mini-games in the main scene, designed to engage the patient in a fun way. Using the Quest 2 controller, the user can select the game they want to try.
+
+The first is a challenge where the user tries to keep the mechanical arm at a certain angle indicated on the screen. It is simple to understand, but much more challenging than it seems.
+
+The second is the color game. By moving the mechanical arm, the patient must point to the correct color, indicated on the screen, and pull the trigger on the controller to score.
+
+Additionally, the user can simulate the action of picking an apple in the "move apple" option.
 
 ## Hardware
 
